@@ -20,7 +20,7 @@ public class CityTest {
 	@Before
 	public void testSetup(){
 		driverFirefox = new FirefoxDriver();
-		// объект драйвера инициализирутся html-моделью и выполняется в памяти (без запуска браузера)
+		// РёРЅРёС†РёР°Р»РёР·Р°С†РёСЏ РѕР±СЉРµРєС‚Р° html-РјРѕРґРµР»СЊСЋ СЃ РІС‹РїРѕР»РЅРµРЅРёРµРј РІ РїР°РјСЏС‚Рё (Р±РµР· Р·Р°РїСѓСЃРєР° Р±СЂР°СѓР·РµСЂР°)
 //		driver = new HtmlUnitDriver();
 	}
 	
@@ -32,17 +32,17 @@ public class CityTest {
 	
 	@Test
 	public void testCurrentCityPenza() {
-		// инициализируем объект начальной страницы яндекса (yandex.ru)
+		// РёРЅРёС†РёР°Р»РёР·РёСЂСѓРµРј РѕР±СЉРµРєС‚ РЅР°С‡Р°Р»СЊРЅРѕР№ СЃС‚СЂР°РЅРёС†С‹ СЏРЅРґРµРєСЃР°(yandex.ru)
 		YandexInitPage yandexInitPage = new YandexInitPage(driverFirefox);
 //		YandexInitPage yandexInitPage = new YandexInitPage(driver);
 		
-		// переходим по адресу yandex.ru
+		// РїРµСЂРµС…РѕРґРёРј РїРѕ Р°РґСЂРµСЃСѓ yandex.ru
 		yandexInitPage = yandexInitPage.navigateToYandex();
 		
-		// находим ссылку на страницу Яндекс.Погоды и нажимаем ее
+		// РЅР°С…РѕРґРёРј СЃСЃС‹Р»РєСѓ РЅР° РЇРЅРґРµРєСЃ.РџРѕРіРѕРґСѓ Рё РїРµСЂРµС…РѕРґРёРј РїРѕ РЅРµР№
 		YandexWeatherPage yandexWeatherPage = yandexInitPage.clickOnWeather();
 		
-		// получаем урл, парсим и проверяем на истинность
+		// РїРѕР»СѓС‡Р°РµРј СѓСЂР», РїР°СЂСЃРёРј Рё СЃСЂР°РІРЅРёРІР°РµРј СЂРµР·СѓР»СЊС‚Р°С‚
 		assertTrue(yandexWeatherPage.getCurrentCity().contains("penza"));
 	}
 	

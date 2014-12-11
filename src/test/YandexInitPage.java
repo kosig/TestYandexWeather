@@ -10,7 +10,7 @@ public class YandexInitPage extends AbstractPage {
 	}
 	
 	public YandexWeatherPage clickOnWeather(){
-		driver.findElement(By.linkText("Погода")).click();
+		driver.findElement(By.linkText("РџРѕРіРѕРґР°")).click();
 		return new YandexWeatherPage(driver);
 	}
 
